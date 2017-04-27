@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AuthVOControl">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="NEVER" />
+   </rowConstraints>
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="508.0">
+         <left>
+            <Pane fx:id="Authentification" focusTraversable="true" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <ImageView fitHeight="248.0" fitWidth="508.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/logiin.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="226.0" fitWidth="114.0" layoutX="380.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/submit.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Connexion" layoutX="380.0" layoutY="48.0" mnemonicParsing="false" onAction="#AddConnexionVO" opacity="0.0" prefHeight="157.0" prefWidth="118.0" snapToPixel="false" text="Connexion">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="234.0" layoutY="170.0" prefHeight="39.0" prefWidth="138.0" text="Mot de passe oublié ?" textFill="#1f73b5">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="97.0" text="Utilisateur :" textFill="#fafbfc">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="login" layoutX="11.0" layoutY="123.0" prefHeight="25.0" prefWidth="159.0" promptText="mail@domaine.com">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="202.0" layoutY="97.0" text="Mot de passe :" textFill="#fafbfc">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="15.0" fitWidth="21.0" focusTraversable="true" layoutX="173.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/user3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="15.0" fitWidth="21.0" focusTraversable="true" layoutX="354.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/Lock-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label contentDisplay="TOP" layoutX="14.0" layoutY="149.0" text="Nom d'utilisateur Incorrecte !" textFill="#e11f26" textOverrun="CLIP">
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" layoutX="202.0" layoutY="149.0" text="Mot de passe Incorrecte !" textFill="#e11f26" textOverrun="CLIP">
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="password" layoutX="190.0" layoutY="124.0" prefHeight="7.0" prefWidth="149.0" promptText="mot de passe">
+                     <font>
+                        <Font name="Carlito Italic" size="13.0" />
+                     </font></PasswordField>
+                  <Button fx:id="mdpOublie" layoutX="223.0" layoutY="188.0" mnemonicParsing="false" onAction="#AddMdpOublie" opacity="0.0" prefHeight="2.0" prefWidth="146.0" text="mdp oublié" />
+                  <Label layoutX="14.0" layoutY="171.0" prefHeight="40.0" prefWidth="145.0" style="-fx-font-family: blue;" text="Pas encore Inscrit?" textFill="#7970dd">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="Inscription" layoutX="11.0" layoutY="184.0" mnemonicParsing="false" onAction="#AddInscription" opacity="0.0" prefHeight="33.0" prefWidth="125.0" text="Inscription" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Pane>
+         </left>
+      </BorderPane>
+   </children>
+</GridPane>

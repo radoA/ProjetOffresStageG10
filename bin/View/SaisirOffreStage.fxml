@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SaisirOffreControl">
+   <children>
+      <Label layoutX="25.0" layoutY="36.0" text="NOM ENTREPRISE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="72.0" text="DOMAINE OFFRE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="109.0" text="LIBELLE OFFRE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="149.0" text="DEBUTE LE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="246.0" layoutY="149.0" text="DUREE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="190.0" text="CHEMIN DE STOCKAGE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="libeleOffre" layoutX="159.0" layoutY="107.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="cheminStockage" layoutX="132.0" layoutY="211.0" prefHeight="25.0" prefWidth="235.0" />
+      <DatePicker fx:id="dateDebut" layoutX="164.0" layoutY="147.0" prefHeight="25.0" prefWidth="77.0" />
+      <TextField fx:id="duree" layoutX="300.0" layoutY="147.0" prefHeight="25.0" prefWidth="55.0" />
+      <Label layoutX="384.0" layoutY="14.0" text="DESCRIPTIF OFFRE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descriptif" layoutX="384.0" layoutY="44.0" prefHeight="259.0" prefWidth="217.0" />
+      <ChoiceBox fx:id="nomEntreprise" layoutX="159.0" layoutY="34.0" prefHeight="25.0" prefWidth="196.0" />
+      <ChoiceBox fx:id="domaineOffre" layoutX="159.0" layoutY="70.0" prefHeight="25.0" prefWidth="196.0" />
+      <ImageView fitHeight="64.0" fitWidth="132.0" layoutX="393.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/videaj.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Vider" layoutX="394.0" layoutY="317.0" mnemonicParsing="false" onAction="#SupOnClick" opacity="0.0" prefHeight="58.0" prefWidth="65.0" text="Button" />
+      <Button fx:id="Valider" layoutX="459.0" layoutY="317.0" mnemonicParsing="false" onAction="#AddOffre" opacity="0.0" prefHeight="58.0" prefWidth="65.0" text="Button" />
+   </children>
+</Pane>

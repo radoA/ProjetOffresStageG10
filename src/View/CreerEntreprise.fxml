@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CreerEntrepriseControl">
+   <children>
+      <TabPane layoutX="-4.0" prefHeight="427.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="Formulaire" text="Formulaire">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="618.0">
+                     <children>
+                        <Label layoutX="73.0" layoutY="28.0" text="NOM ENTREPRISE(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nomEntreprise" layoutX="205.0" layoutY="26.0" prefHeight="25.0" prefWidth="249.0" promptText="ex: GEMALTO">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font></TextField>
+                        <Label layoutX="129.0" layoutY="70.0" text="ADRESSE(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="adresse" layoutX="205.0" layoutY="66.0" prefHeight="25.0" prefWidth="249.0" promptText="numero,rue">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font></TextField>
+                        <Label layoutX="95.0" layoutY="110.0" text="CODE POSTAL(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="290.0" layoutY="110.0" text="VILLE">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="148.0" text="SECTEUR D'ACTIVITE(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="30.0" layoutY="336.0" text="(*) Champ obligatoire" textFill="#ff000d" />
+                        <TextField fx:id="codePostal" layoutX="206.0" layoutY="108.0" prefHeight="26.0" prefWidth="72.0" promptText="77000">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font></TextField>
+                        <TextField fx:id="ville" layoutX="343.0" layoutY="108.0" prefHeight="25.0" prefWidth="111.0" promptText="Paris">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font></TextField>
+                        <ChoiceBox fx:id="secteurActivite" cache="true" layoutX="205.0" layoutY="148.0" pickOnBounds="false" prefHeight="25.0" prefWidth="197.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor></ChoiceBox>
+                        <Label layoutX="78.0" layoutY="253.0" prefHeight="29.0" prefWidth="119.0" text="MOT DE PASSE(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="292.0" prefHeight="29.0" prefWidth="139.0" text="CONFIRMER MDP(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="139.0" layoutY="219.0" prefHeight="29.0" prefWidth="54.0" text="MAIL(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="101.0" layoutY="190.0" prefHeight="29.0" prefWidth="96.0" text="TELEPHONE(*)">
+                           <font>
+                              <Font name="Carlito" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tel" layoutX="205.0" layoutY="186.0" promptText="0661010252">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="mail" layoutX="205.0" layoutY="220.0" prefHeight="26.0" prefWidth="296.0" promptText="ex : rh@gmail.com">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField fx:id="mdp" layoutX="205.0" layoutY="255.0" prefHeight="26.0" prefWidth="231.0" promptText="********" />
+                        <PasswordField fx:id="confirmeMdp" layoutX="205.0" layoutY="295.0" prefHeight="26.0" prefWidth="230.0" promptText="********" />
+                        <ImageView fitHeight="43.0" fitWidth="111.0" layoutX="482.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/Envoyer.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="Envoyer" layoutX="470.0" layoutY="301.0" mnemonicParsing="false" onAction="#AddEntreprise" opacity="0.0" prefHeight="32.0" prefWidth="127.0" text="Envoyer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</Pane>

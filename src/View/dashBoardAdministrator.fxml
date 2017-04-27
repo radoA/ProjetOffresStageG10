@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="1036.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardAdministrator">
+  <tabs>
+    <Tab text="Entreprise">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableViewEntreprise" editable="true" layoutX="20.0" layoutY="14.0" prefHeight="499.0" prefWidth="998.0" />
+                  <TextField fx:id="nomEntrAjout" layoutX="20.0" layoutY="525.0" prefHeight="26.0" prefWidth="142.0" promptText="nom" />
+                  <TextField fx:id="adrNumRueEntrAjout" layoutX="167.0" layoutY="525.0" promptText="2 av F.Mitterrand" />
+                  <TextField fx:id="cPostalEntrAj" layoutX="347.0" layoutY="525.0" prefHeight="26.0" prefWidth="59.0" promptText="77000" />
+                  <TextField fx:id="villeEntrAj" layoutX="417.0" layoutY="525.0" prefHeight="26.0" prefWidth="91.0" promptText="Paris" />
+                  <TextField fx:id="mailEntrAj" layoutX="518.0" layoutY="525.0" prefHeight="26.0" prefWidth="111.0" promptText="mail@entr.com" />
+                  <TextField fx:id="telEntrAj" layoutX="638.0" layoutY="525.0" prefHeight="26.0" prefWidth="106.0" promptText="0156765399" />
+                  <TextField fx:id="secteurEntrAj" layoutX="755.0" layoutY="525.0" prefHeight="26.0" prefWidth="128.0" promptText="santé" />
+                  <Button fx:id="addEntr" layoutX="901.0" layoutY="525.0" mnemonicParsing="false" onAction="#addEntrEvenement" text="add" />
+                  <Button fx:id="updatebtnEntr" layoutX="20.0" layoutY="562.0" mnemonicParsing="false" onAction="#updateEntrEvenement" text="update" />
+                  <Button fx:id="deleteEntrbtn" layoutX="238.0" layoutY="562.0" mnemonicParsing="false" onAction="#dellEntrEvenement" text="delete" />
+                  <Button layoutX="113.0" layoutY="562.0" mnemonicParsing="false" onAction="#updateAllEntrEvenement" text="update all" />
+               </children>
+            </AnchorPane>
+         </content></Tab>
+      <Tab text="Stage">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableViewStage" editable="true" layoutX="14.0" layoutY="14.0" prefHeight="466.0" prefWidth="1008.0" />
+                  <TextField fx:id="ideOffre" layoutX="14.0" layoutY="490.0" prefHeight="26.0" prefWidth="75.0" promptText="ide" />
+                  <TextField fx:id="libOffreStage" layoutX="101.0" layoutY="490.0" prefHeight="26.0" prefWidth="123.0" promptText="libellé de l'offre" />
+                  <TextArea fx:id="descrOffreStage" layoutX="239.0" layoutY="490.0" prefHeight="85.0" prefWidth="200.0" promptText="descriptif de l'offre" />
+                  <TextField fx:id="domaineOffreStage" layoutX="456.0" layoutY="490.0" promptText="domaine de l'offre" />
+                  <TextField fx:id="dureeOffreStage" layoutX="642.0" layoutY="490.0" prefHeight="26.0" prefWidth="98.0" promptText="dureeOffreStage" />
+                  <TextField fx:id="cheminOffreStage" layoutX="756.0" layoutY="490.0" prefHeight="26.0" prefWidth="119.0" promptText="chemin offre" />
+                  <TextField fx:id="valideOffre" layoutX="885.0" layoutY="490.0" prefHeight="26.0" prefWidth="62.0" promptText="0/1" />
+                  <Button fx:id="addOffre" layoutX="960.0" layoutY="490.0" mnemonicParsing="false" text="add" />
+                  <Button fx:id="updateOffre" layoutX="941.0" layoutY="533.0" mnemonicParsing="false" text="update" />
+                  <Button fx:id="removoOffre" layoutX="941.0" layoutY="575.0" mnemonicParsing="false" text="remove" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Postuler">
+         <content>
+            <TableView fx:id="tableViewPostuler" editable="true" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="idPostuler" prefWidth="431.0" text="idPostuler" />
+                  <TableColumn fx:id="idOffreP" prefWidth="267.0" text="idoffre" />
+                  <TableColumn fx:id="idUtilisateurPost" prefWidth="197.0" text="idUtilisateur" />
+                  <TableColumn fx:id="statutPost" prefWidth="134.66664123535156" text="statut" />
+               </columns>
+            </TableView>
+         </content>
+      </Tab>
+      <Tab text="Utilisateur">
+         <content>
+            <TableView fx:id="tableViewUtilisateur" editable="true" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="idUt" prefWidth="75.0" text="idUt" />
+                  <TableColumn fx:id="nomUt" prefWidth="75.0" text="nom" />
+                  <TableColumn fx:id="prenomUt" prefWidth="75.0" text="prenom" />
+                  <TableColumn fx:id="sexeUt" prefWidth="75.0" text="sexe" />
+                  <TableColumn fx:id="adrUt" prefWidth="119.0" text="adresse" />
+                  <TableColumn fx:id="mailUt" prefWidth="123.66665649414062" text="mail" />
+                  <TableColumn fx:id="descrUt" prefWidth="291.3333435058594" text="description" />
+                  <TableColumn fx:id="dateUt" prefWidth="108.33331298828125" text="date" />
+                  <TableColumn fx:id="adminUt" prefWidth="94.0" text="admin" />
+               </columns>
+            </TableView>
+         </content>
+      </Tab>
+      <Tab text="Authentification">
+         <content>
+            <TableView fx:id="tableViewAuthentification" editable="true" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="idAuth" prefWidth="240.33333587646484" text="idAuth" />
+                  <TableColumn fx:id="identifiantAuth" prefWidth="244.66666412353516" text="identifiant" />
+                  <TableColumn fx:id="cleAuth" prefWidth="251.3333282470703" text="cle" />
+                  <TableColumn fx:id="typeAuth" prefWidth="291.33335876464844" text="type" />
+               </columns>
+            </TableView>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

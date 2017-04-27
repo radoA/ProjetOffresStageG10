@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChoixControl">
+   <children>
+      <ImageView fitHeight="322.0" fitWidth="263.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/background9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="230.0" layoutX="16.0" layoutY="59.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/background7.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="230.0" layoutX="16.0" layoutY="178.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/background8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="97.0" layoutX="147.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/graduation-silhouette-clipart-best-y7N8i8-clipart.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="108.0" layoutX="131.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/124.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="27.0" layoutY="98.0" prefHeight="38.0" prefWidth="97.0" text="Etudiant" textFill="#f8f7f7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="216.0" prefHeight="38.0" prefWidth="97.0" text="Entreprise" textFill="#f8f7f7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="14.0" prefHeight="38.0" prefWidth="194.0" text="Choisissez votre statut" textFill="#46c6c4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="etudiant" layoutX="16.0" layoutY="56.0" mnemonicParsing="false" onAction="#AddInscripEtudiant" opacity="0.34" prefHeight="122.0" prefWidth="230.0" text="Etudiant" textFill="#fcf7f7" />
+      <Button fx:id="Entreprise" layoutX="17.0" layoutY="178.0" mnemonicParsing="false" onAction="#AddEntreprise" opacity="0.11" prefHeight="115.0" prefWidth="230.0" text="Entreprise" textFill="#f8f7f7" />
+   </children>
+</Pane>

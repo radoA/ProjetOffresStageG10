@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuControl">
+   <children>
+      <ImageView fitHeight="108.0" fitWidth="129.0" layoutX="39.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="324.0" fitWidth="606.0" layoutX="-7.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/background4.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="TOP" layoutX="14.0" layoutY="21.0" text="Menu d'Utilisateur :" textFill="#0da1dbbe">
+         <font>
+            <Font name="Calibri Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="108.0" fitWidth="250.0" layoutX="39.0" layoutY="56.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../images/background2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="250.0" layoutX="317.0" layoutY="56.0" opacity="0.99" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../images/background8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="129.0" layoutX="39.0" layoutY="172.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../images/background6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="110.0" layoutX="179.0" layoutY="172.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../images/background1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="118.0" layoutX="317.0" layoutY="172.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../images/background6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="118.0" layoutX="449.0" layoutY="172.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../images/Rechercher.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="200.0" layoutX="63.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="77.0" fitWidth="118.0" layoutX="200.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/client.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="77.0" fitWidth="118.0" layoutX="321.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Entreprises.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="77.0" fitWidth="95.0" layoutX="196.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/add_to_database.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="41.0" layoutY="49.0" prefHeight="48.0" prefWidth="219.0" text="Espace Inscription" textFill="#f5f2f2">
+         <font>
+            <Font name="Carlito Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="66.0" text="Espace Connexion" textFill="#f5f2f2">
+         <font>
+            <Font name="Carlito Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="EspaceInscription" layoutX="39.0" layoutY="56.0" mnemonicParsing="false" onAction="#AddInscription" opacity="0.0" prefHeight="108.0" prefWidth="250.0" text="EspaceEtudiant" textFill="#fcfcfc" />
+      <Label layoutX="43.0" layoutY="150.0" prefHeight="65.0" prefWidth="129.0" text="Offres">
+         <font>
+            <Font name="Carlito Bold" size="17.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.005555555555555536" proportional="false" radius="0.5">
+               <stops>
+                  <Stop color="#282525" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="326.0" layoutY="175.0" text="Entreprises" textFill="#f5f2f2">
+         <font>
+            <Font name="Carlito Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="183.0" layoutY="169.0" prefHeight="35.0" prefWidth="102.0" text="Ajouter Offre" textFill="#f5f2f2">
+         <font>
+            <Font name="Carlito Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="EspaceConnexion" layoutX="317.0" layoutY="56.0" mnemonicParsing="false" onAction="#AddConnexion" opacity="0.0" prefHeight="108.0" prefWidth="250.0" text="Connexion">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="CreerOffreStage" layoutX="179.0" layoutY="172.0" mnemonicParsing="false" onAction="#AddOffreStage" opacity="0.0" prefHeight="108.0" prefWidth="110.0" text="AjouterOffre" />
+      <Button fx:id="VoirEntreprise" layoutX="313.0" layoutY="172.0" mnemonicParsing="false" onAction="#AddVoirEntreprise" opacity="0.0" prefHeight="108.0" prefWidth="127.0" text="VoirEntreprise" />
+      <Button fx:id="Rechercher" layoutX="449.0" layoutY="173.0" mnemonicParsing="false" onAction="#AddRechercher" opacity="0.0" prefHeight="108.0" prefWidth="118.0" text="Rechercher" />
+      <ImageView fitHeight="77.0" fitWidth="95.0" layoutX="484.0" layoutY="56.0" opacity="0.94" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/account1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="94.0" fitWidth="118.0" layoutX="43.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/stage.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="20.0" layoutX="546.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Lock-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="72.0" fitWidth="65.0" layoutX="44.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/inscription.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ConsulterOffre" layoutX="39.0" layoutY="172.0" mnemonicParsing="false" onAction="#AddConsulterOffre" opacity="0.0" prefHeight="108.0" prefWidth="129.0" text="Offres" />
+   </children>
+</Pane>

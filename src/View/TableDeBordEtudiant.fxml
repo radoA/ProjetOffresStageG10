@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="687.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TableDebordEtudiantControl">
+  <tabs>
+    <Tab text="Récapitulatif des Offres Postulées">
+         <content>
+            <AnchorPane maxHeight="600.0" maxWidth="938.0" minHeight="578.0" minWidth="600.0" prefHeight="578.0" prefWidth="716.0">
+               <children>
+                  <TextField fx:id="nomEntrAjout" layoutX="367.0" layoutY="91.0" prefHeight="26.0" prefWidth="280.0" promptText="Adresse" />
+                  <TextField fx:id="adrNumRueEntrAjout" layoutX="369.0" layoutY="241.0" prefHeight="25.0" prefWidth="278.0" promptText="Secteur" />
+                  <TextField fx:id="villeEntrAj" layoutX="369.0" layoutY="126.0" prefHeight="26.0" prefWidth="201.0" promptText="Paris" />
+                  <TextField fx:id="mailEntrAj" layoutX="367.0" layoutY="164.0" prefHeight="26.0" prefWidth="277.0" promptText="mail" />
+                  <TextField fx:id="telEntrAj" layoutX="369.0" layoutY="200.0" prefHeight="26.0" prefWidth="106.0" promptText="tel:" />
+                  <TextField fx:id="secteurEntrAj" layoutX="489.0" layoutY="202.0" prefHeight="26.0" prefWidth="140.0" promptText="santé" />
+                  <Button fx:id="Quitter" layoutX="521.0" layoutY="513.0" mnemonicParsing="false" onAction="#AddQuitter" prefHeight="37.0" prefWidth="120.0" text="Quitter" />
+                  <Button fx:id="Supprimer" layoutX="164.0" layoutY="506.0" mnemonicParsing="false" onAction="#AddSupprimer" prefHeight="36.0" prefWidth="112.0" text="Supprimer" />
+                  <Button fx:id="Actualiser" layoutX="26.0" layoutY="505.0" mnemonicParsing="false" onAction="#AddActualiser" prefHeight="37.0" prefWidth="107.0" text="Actualiser" />
+                  <TableView layoutX="27.0" layoutY="26.0" prefHeight="468.0" prefWidth="248.0">
+                    <columns>
+                      <TableColumn prefWidth="247.0" text="Offres Postulés" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="398.0" layoutY="10.0" prefHeight="37.0" prefWidth="219.0" text="Information Entreprise">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nomEntrAjout1" layoutX="366.0" layoutY="57.0" prefHeight="26.0" prefWidth="215.0" promptText="Nom entreprise" />
+                  <TableView layoutX="286.0" layoutY="289.0" prefHeight="200.0" prefWidth="380.0">
+                    <columns>
+                      <TableColumn prefWidth="206.0" text="Offres Acceptées" />
+                      <TableColumn prefWidth="173.0" text="Offres réfusées" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="VoirOffre" layoutX="312.0" layoutY="510.0" mnemonicParsing="false" onAction="#AddVoirOffre" prefHeight="36.0" prefWidth="130.0" text="Voir les offres" />
+               </children>
+            </AnchorPane>
+         </content></Tab>
+  </tabs>
+</TabPane>
