@@ -7,6 +7,7 @@ public class Authentification {
 	private String login;
 	private String password;
 	private String type;
+	private int idType;
 	
 	public Authentification(){
 		idAuthentification=0;
@@ -15,7 +16,7 @@ public class Authentification {
 		type="";
 	}
 	
-	public Authentification(String log, String pass){
+	public Authentification(String log, String pass, int idT){
 		try {
 			if(VerificationFormulaire.validateMail(log)){
 				login=log;
@@ -37,12 +38,14 @@ public class Authentification {
 			System.out.println("Authentification, erreur mot de passe");
 			e.printStackTrace();
 		}
+		idType = idT;
 	}
 	
-	public Authentification(String log, String pass, String typ){
+	public Authentification(String log, String pass, String typ, int idT){
 		login=log;
 		password=md5(pass);
 		type=typ;
+		idType = idT;
 	}
 	
     public int getIdAuthentification() {
@@ -131,9 +134,13 @@ public class Authentification {
 		return (  login.equals(tmp.getLogin()) && password.equals(md5(tmp.getPassword()))  )  ;
 		
 	}
-//	public boolean egal(Authentification tmp){
-//		return (  login.equals(tmp.getLogin()) && password.equals(md5(tmp.getPassword()))  )  ;
-//		
-//	}
+
+	public int getIdType() {
+		return idType;
+	}
+
+	public void setIdType(int idType) {
+		this.idType = idType;
+	}
 	
 }

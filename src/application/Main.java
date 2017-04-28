@@ -30,3 +30,10 @@ public class Main extends Application{
 }
 
 }
+/*
+ * AuthAOControl : Ajouter offre
+ * AuthVOControl : Voir offres
+ * 
+ * Authentification : pour l'espace connexion
+ */
+ 

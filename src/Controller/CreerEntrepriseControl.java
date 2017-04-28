@@ -74,7 +74,8 @@ public class CreerEntrepriseControl {
 		}
 		//System.out.println(e.toString());
 		
-		aut = new Authentification(e.getMail(), mdp.getText(), "entreprise");
+		aut = new Authentification(e.getMail(), mdp.getText(), "entreprise", Database.getIDThingsFromObjet(e));
+		
 		//inserer dans Authentification aussi
 		Boolean insertAuthentification=Database.insertAuthentificationToDB(aut);
 		if(insertAuthentification){

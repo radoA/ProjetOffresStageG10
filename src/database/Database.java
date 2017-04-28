@@ -49,12 +49,11 @@ public class Database {
 		}
 		else if(objet instanceof Authentification){
 			Authentification a = (Authentification) objet;
-			sql= "INSERT INTO `authentification` (`IDAUTHETIFICATION`, `IDENTIFIANT`, `MOTDEPASSE`, `TYPE`) VALUES (" + "NULL" +",'"+a.getLogin()+"',"+ "'"+ a.getPassword()+ "',"+ "'"+a.getType()+"')";
+			sql= "INSERT INTO `authentification` (`IDAUTHETIFICATION`, `IDENTIFIANT`, `MOTDEPASSE`, `TYPE`, `IDTYPE`) VALUES (" + "NULL" +",'"+a.getLogin()+"',"+ "'"+ a.getPassword()+ "',"+ "'"+a.getType()+ "',"+a.getIdType()+")";
 		}
 		return request( objet , sql);
 	}
 	
-
 	
 	public static boolean insertEntrepriseToDB(Entreprise e) {
 		return insertToDB(e);
@@ -69,28 +68,15 @@ public class Database {
 	}
 	
 	public static boolean createOffreDeStage(OffreStage o, int ide) {
-		try {
-			// Creation d'unerequete SQL
-			String sql = "INSERT INTO offrestage (`IDE`,`LIBELLEOFFRE`,`DESCRIPTIFOFFRE`,`DOMAINEOFFRE`,`DATEDEBUTOFFRE`,`DUREEOFFRE`,`CHEMINOFFRE` , `VALIDE`) VALUES ("
-					+ ide +  ",'" + o.getLibeleOffre() + "','" + o.getDescriptifOffre() + "','" + o.getDomaine() + "','"
-					+ o.getDateD() + "'," + o.getDuree() + ",'" + o.getCheminOffre() + "'," + o.isValide() + ")";
-			 System.out.println(sql);
-			// Etape 3 : Creation d'un Statement
-			PreparedStatement st = Connexion.getCn().prepareStatement(sql);
-			// Etape 4 : Execution de la requete
-			if (st.executeUpdate(sql) == 1) {
-				st.close();
-				return true;
-			}
-			st.close();
-		} catch (SQLException ex) {
-			System.out.println("Erreur SQL, creation offre de stage");
-		}
-		return false;
+		String sql = "INSERT INTO offrestage (`IDE`,`LIBELLEOFFRE`,`DESCRIPTIFOFFRE`,`DOMAINEOFFRE`,`DATEDEBUTOFFRE`,`DUREEOFFRE`,`CHEMINOFFRE` , `VALIDE`) VALUES ("
+				+ ide +  ",'" + o.getLibeleOffre() + "','" + o.getDescriptifOffre() + "','" + o.getDomaine() + "','"
+				+ o.getDateD() + "'," + o.getDuree() + ",'" + o.getCheminOffre() + "'," + o.isValide() + ")";
+		 //System.out.println(sql);
+		return request(o,sql);
 	}
 	
 	private static  ArrayList<?> extractFromDB(Object objet){
-		ArrayList<?> array = null;//= new ArrayList<Object>();
+		ArrayList<?> array = null;
 		String sql="";
 		if(objet instanceof Entreprise){
 			ArrayList<Entreprise> entList = new ArrayList<Entreprise>();
@@ -409,7 +395,7 @@ public class Database {
 					 ",`ADRESSENUMERORUE`="+"'"+e.getAdresseNumeroRue()+"'"+",`ADRESSECODEPOSTAL`="+e.getAdresseCodePostal()+
 					 ",`ADRESSEVILLE`="+"'"+e.getAdresseVille()+"'"+",`MAIL`="+"'"+e.getMail()+"'"+",`TELEPHONE`="+e.getTelephone()+
 					 ",`SECTEURACTIVITE`="+"'"+e.getSecteurActivite() +"'"+" WHERE `IDE`="+e.getIde()+";";
-			 System.out.println(sql);
+			 //System.out.println(sql);
 			res = request( objet , sql);
 		}
 		return res;
@@ -419,13 +405,46 @@ public class Database {
 		int ide = Integer.parseInt(e.getIde());
 		return updateToDB(e, ide);
 	}
-	
 	public static int getIDThingsFromObjet(Object objet){
+		String sql ="";
 		if(objet instanceof Utilisateur){
-			//Utilisateur ut = new Utilisateur();
+			Utilisateur ut = (Utilisateur) objet;
+			sql = "SELECT * FROM `utilisateur` WHERE nom = ";
+			sql = sql + "'" +ut.getNom()+ "'" + " AND prenom = ";
+			sql = sql + "'" +ut.getPrenom()+ "'" + " AND mail =";
+			sql = sql + "'" +ut.getMail()+ "' LIMIT 1";
+			try {
+				PreparedStatement st = Connexion.getCn().prepareStatement(sql);
+				ResultSet rs=st.executeQuery();
+				while(rs.next()){
+					ut.setIdUtilisateur(Integer.parseInt(rs.getString(1)));
+				}
+				st.close();
+				return ut.getIdUtilisateur();
+			} catch (SQLException e) {
+				
+				System.out.println("Erreur SQL dans la table " + objet.getClass().getName());
+			}		
 		}
 		else if(objet instanceof Entreprise){
-			//Entreprise ent = new Entreprise();
+			
+			Entreprise ent = (Entreprise) objet;
+			sql = "SELECT * FROM `entreprise` WHERE nom = ";
+			sql = sql + "'" +ent.getNom()+ "'" + " AND SECTEURACTIVITE = ";
+			sql = sql + "'" +ent.getSecteurActivite()+ "'" + " AND mail =";
+			sql = sql + "'" +ent.getMail()+ "' LIMIT 1";
+			try {
+				PreparedStatement st = Connexion.getCn().prepareStatement(sql);
+				ResultSet rs=st.executeQuery();
+				while(rs.next()){
+					ent.setIde(rs.getString(1));
+				}
+				st.close();
+				return Integer.parseInt(ent.getIde());
+			} catch (SQLException e) {
+				
+				System.out.println("Erreur SQL dans la table " + objet.getClass().getName());
+			}
 		}
 		return 0;
 	}

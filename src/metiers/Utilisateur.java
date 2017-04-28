@@ -17,6 +17,7 @@ public class Utilisateur {
     private int idAuthentification;
 
 	public Utilisateur() {
+		super();
 	}
 
 	public Utilisateur( String nom, String prenom, String sexe,
