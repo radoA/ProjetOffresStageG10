@@ -14,6 +14,7 @@ public class Authentification {
 		login="";
 		password="";
 		type="";
+		idType=0;
 	}
 	
 	public Authentification(String log, String pass, int idT){
@@ -109,10 +110,6 @@ public class Authentification {
         return sb.toString();
     }
     
-	public String toString() {
-		return "Authentification [idAuthentification=" + idAuthentification + ", login=" + login + ", password="
-				+ password + ", type=" + type + "]";
-	}
 
 	public static void test(String[] args){
     	System.out.println(md5("rado"));
@@ -142,5 +139,12 @@ public class Authentification {
 	public void setIdType(int idType) {
 		this.idType = idType;
 	}
+
+	@Override
+	public String toString() {
+		return "Authentification [idAuthentification=" + idAuthentification + ", login=" + login + ", password="
+				+ password + ", type=" + type + ", idType=" + idType + "]";
+	}
+	
 	
 }

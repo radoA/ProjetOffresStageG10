@@ -12,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-//import metiers.Entreprise;
 
 public class MenuControl {
     protected static final Node scene = null;
@@ -33,13 +32,34 @@ public class MenuControl {
     @FXML
     private Button Rechercher;
     
-    //private Entreprise e;
+    private static int choix;
+    
+    public static final int CONNEXION 			= 2;
+    public static final int CONSULTER_OFFRE 	= 3;
+    public static final int AJOUTER_OFFRE 		= 4;
 
+    private void launch_authentification(String titre, String source){
+    	Stage primaryStage= new Stage();
+    	primaryStage.setTitle(titre );
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource(source));
+			Scene scene= new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			primaryStage.setResizable(false);
+			//((Node)(event.getSource())).getScene().getWindow().hide();
 
+		} catch (IOException e1) {
+			System.out.println("Problème page Authentification ");
+			e1.printStackTrace();
+		}
+    }
+
+    
     @FXML
     public void AddInscription(ActionEvent e){
     	Stage primaryStage= new Stage();
-    	
     	primaryStage.setTitle("Choisir le Statut" );
 		Parent root;
 		try {
@@ -52,112 +72,53 @@ public class MenuControl {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
-		
     }
+    
+
+
+    
+    
     
     @FXML
     void AddConnexion(ActionEvent event) {
-    	Stage primaryStage= new Stage();
-    	primaryStage.setTitle("Connexion" );
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("/View/Authentification.fxml"));
-			Scene scene= new Scene(root);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			primaryStage.setResizable(false);
-			//((Node)(event.getSource())).getScene().getWindow().hide();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
+    	setChoix(CONNEXION);
+        launch_authentification("Connexion","/View/Authentification.fxml");
     }
 
 
     @FXML
     void AddConsulterOffre(ActionEvent event) {
-      Stage primaryStage= new Stage();
-    	
-      primaryStage.setTitle("Connexion" );
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("/View/AuthVO.fxml"));
-			Scene scene= new Scene(root);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			primaryStage.setResizable(false);
-			//((Node)(event.getSource())).getScene().getWindow().hide();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
-		}
+    	setChoix(CONSULTER_OFFRE);
+    	launch_authentification("Connexion","/View/Authentification.fxml");
+	}
 
 
 	@FXML
     void AddOffreStage(ActionEvent event)  {
-		Stage primaryStage= new Stage();
-		primaryStage.setTitle("Connexion" );
-		Parent root;
-		try {
-			root = FXMLLoader.load(getClass().getResource("/View/AuthAO.fxml"));
-			Scene scene= new Scene(root);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			primaryStage.setResizable(false);
-			//((Node)(event.getSource())).getScene().getWindow().hide();
-		} catch (IOException e1){
-			e1.printStackTrace();
-		}
-
-		
-		}
+//		primaryStage.setTitle("Ajout offres" );
+		setChoix(AJOUTER_OFFRE);
+		launch_authentification("Connexion","/View/Authentification.fxml");
+	}
 		
 	 @FXML
 	    void AddVoirEntreprise(ActionEvent event) {
-		 
-		 Stage primaryStage= new Stage();
-			primaryStage.setTitle("Connexion" );
-			Parent root;
-			try {
-				root = FXMLLoader.load(getClass().getResource("/View/Authentification.fxml"));
-				Scene scene= new Scene(root);
-				primaryStage.setScene(scene);
-				primaryStage.show();
-				primaryStage.setResizable(false);
-				//((Node)(event.getSource())).getScene().getWindow().hide();
-			} catch (IOException e1){
-				e1.printStackTrace();
-			}
-	    	
 
 	    }
-	 @FXML
+	 	@FXML
 	    void AddRechercher(ActionEvent event) {
-		 Stage primaryStage= new Stage();
-
-	    	
-	    	primaryStage.setTitle("Connexion" );
-			Parent root;
-			try {
-				root = FXMLLoader.load(getClass().getResource("/View/Authentification.fxml"));
-				
-				Scene scene= new Scene(root);
-				primaryStage.setScene(scene);
-				primaryStage.show();
-				primaryStage.setResizable(false);
-				//((Node)(event.getSource())).getScene().getWindow().hide();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
 	   
 	    }
 
-    
+	    public static int getChoix(){
+	    	return choix;
+	    }
    
-    @FXML
+	    public static void setChoix(int choix) {
+			MenuControl.choix = choix;
+		}
+
+
+	@FXML
     void initialize() {
         assert EspaceInscription != null : "fx:id=\"EspaceEtudiant\" was not injected: check your FXML file 'Menu.fxml'.";
         assert EspaceConnexion != null : "fx:id=\"CreerEntreprise\" was not injected: check your FXML file 'Menu.fxml'.";

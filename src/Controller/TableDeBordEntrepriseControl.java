@@ -1,9 +1,11 @@
 package Controller;
 
 import java.io.IOException;
+//import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+//import database.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+//import metiers.OffreStage;
 public class TableDeBordEntrepriseControl {
 
     @FXML
