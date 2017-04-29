@@ -38,7 +38,7 @@ public class MenuControl {
     public static final int CONSULTER_OFFRE 	= 3;
     public static final int AJOUTER_OFFRE 		= 4;
 
-    private void launch_authentification(String titre, String source){
+    private void launch_authentification(String titre, String source, ActionEvent event){
     	Stage primaryStage= new Stage();
     	primaryStage.setTitle(titre );
 		Parent root;
@@ -48,10 +48,8 @@ public class MenuControl {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			primaryStage.setResizable(false);
-			//((Node)(event.getSource())).getScene().getWindow().hide();
-
+			((Node)(event.getSource())).getScene().getWindow().hide();
 		} catch (IOException e1) {
-			System.out.println("Problème page Authentification ");
 			e1.printStackTrace();
 		}
     }
@@ -82,14 +80,16 @@ public class MenuControl {
     @FXML
     void AddConnexion(ActionEvent event) {
     	setChoix(CONNEXION);
-        launch_authentification("Connexion","/View/Authentification.fxml");
+    	//System.out.println("TEEEEST");
+
+        launch_authentification("Connexion","/View/Authentification.fxml", event);
     }
 
 
     @FXML
     void AddConsulterOffre(ActionEvent event) {
     	setChoix(CONSULTER_OFFRE);
-    	launch_authentification("Connexion","/View/Authentification.fxml");
+    	launch_authentification("Connexion","/View/Authentification.fxml", event);
 	}
 
 
@@ -97,10 +97,10 @@ public class MenuControl {
     void AddOffreStage(ActionEvent event)  {
 //		primaryStage.setTitle("Ajout offres" );
 		setChoix(AJOUTER_OFFRE);
-		launch_authentification("Connexion","/View/Authentification.fxml");
+		launch_authentification("Connexion","/View/Authentification.fxml", event);
 	}
 		
-	 @FXML
+	 	@FXML
 	    void AddVoirEntreprise(ActionEvent event) {
 
 	    }

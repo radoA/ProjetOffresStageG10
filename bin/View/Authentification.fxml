@@ -75,7 +75,7 @@
                         <Image url="@../../images/Lock-icon.png" />
                      </image>
                   </ImageView>
-                  <PasswordField fx:id="password" layoutX="190.0" layoutY="122.0" prefHeight="7.0" prefWidth="149.0" promptText="***********">
+                  <PasswordField fx:id="password" layoutX="192.0" layoutY="122.0" prefHeight="7.0" prefWidth="149.0" promptText="***********">
                      <font>
                         <Font name="Carlito Italic" size="13.0" />
                      </font></PasswordField>

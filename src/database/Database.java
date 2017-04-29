@@ -87,7 +87,7 @@ public class Database {
 				ResultSet rs=st.executeQuery();
 				while(rs.next()){
 					Entreprise e= new Entreprise();
-					e.setIde(rs.getString(1));//Integer.parseInt(rs.getString(1))
+					e.setIde(rs.getString(1));
 					e.setNom(rs.getString(2));
 					e.setAdresseNumeroRue(rs.getString(3));
 					e.setAdresseCodePostal(rs.getString(4));
@@ -105,7 +105,7 @@ public class Database {
 			}
 			return entList;
 		}
-		else if(objet instanceof Utilisateur){ //non traité
+		else if(objet instanceof Utilisateur){ 
 			ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
 			sql = "SELECT * FROM `utilisateur`";
 			LocalDate myDate1;
@@ -181,6 +181,7 @@ public class Database {
 					o.setLogin(rs.getString(2));
 					o.setPassword(rs.getString(3));
 					o.setType(rs.getString(4));
+					o.setIdType(Integer.parseInt(rs.getString(5)));
 					auth.add(o);
 				}
 				st.close();
