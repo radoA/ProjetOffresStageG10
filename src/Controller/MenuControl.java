@@ -48,7 +48,7 @@ public class MenuControl {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			primaryStage.setResizable(false);
-			((Node)(event.getSource())).getScene().getWindow().hide();
+			//((Node)(event.getSource())).getScene().getWindow().hide();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
