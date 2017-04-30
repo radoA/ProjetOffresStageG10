@@ -33,19 +33,28 @@ public class AuthentificationControl {
     
     private ArrayList<Authentification> listeInscrit;
     
-    private Authentification authentification;
+    private static Authentification authentification;
     
-    
+    //private static boolean voir_liste_offres_entreprises;
 
     public AuthentificationControl() {
 		super();
 	}
 
 	public void initialize(){
+		//voir_liste_offres_entreprises =false;
     	listeInscrit=Database.extractAuthentificationFromDB();
     }
 	
-    private void launch_authentification(String titre, String source, ActionEvent event){
+   // public static boolean isVoir_liste_offres_entreprises() {
+		//return voir_liste_offres_entreprises;
+	//}
+
+	//public void setVoir_liste_offres_entreprises(boolean voir_liste_offres_entreprises) {
+	//	AuthentificationControl.voir_liste_offres_entreprises = voir_liste_offres_entreprises;
+	//}
+
+	private void launch_authentification(String titre, String source, ActionEvent event){
     	Stage primaryStage= new Stage();
     	primaryStage.setTitle(titre );
 		Parent root;
@@ -102,9 +111,11 @@ public class AuthentificationControl {
 			        		launch_authentification("Voir offres", "/View/ConsulterOffreStage.fxml", event);
 			        	}
 			        	else if(acces.getType().equals("entreprise")){
-			        		JOptionPane.showMessageDialog(null, acces.getLogin() + ",Vous vous  etre authentifie entant qu'entreprise,"
-			        				+ "la page demandee n'est pas appropriee");
-			        			  
+			        		//JOptionPane.showMessageDialog(null, acces.getLogin() + ",Vous vous  etre authentifie entant qu'entreprise,"
+			        		//		+ "la page demandee n'est pas appropriee");
+			        		launch_authentification("Voir offres", "/View/ConsulterOffreStage.fxml", event);
+			        		//voir_liste_offres_entreprises = true;
+			        		//JOptionPane.showMessageDialog(null, authentification.getIdType() + " = ID de l'entreprise");
 			        	}
 			        	else{
 			            	if( ((! VerificationFormulaire.validateMail(password.getText()))   )){
@@ -139,7 +150,7 @@ public class AuthentificationControl {
     	}
     }
     
-    public Authentification getAuthentification(){
+    public static Authentification getAuthentification(){
     	return authentification;
     }
     

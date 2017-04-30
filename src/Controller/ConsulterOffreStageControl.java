@@ -44,7 +44,17 @@ public class ConsulterOffreStageControl {
 
     
     public void initialize(){
-    	listeOffres = Database.extractOffreDeStage();
+        listeOffres = Database.extractOffreDeStage();
+
+        if(AuthentificationControl.getAuthentification().getType().equals("entreprise")){
+    		listeOffres.clear();
+    		listeOffres = Database.extractOffreDeStageFromDB(AuthentificationControl.getAuthentification().getIdType());
+    		Postuler.setVisible(false);
+        }
+        else if(AuthentificationControl.getAuthentification().getType().equals("admin")){
+        	Postuler.setText("supprimer");
+        }
+        System.out.println(AuthentificationControl.getAuthentification().toString());
     	nomE.setText(listeOffres.get(0).getNomEntreprise());
     	mailE.setText(listeOffres.get(0).getMailOffreStage());
     	dureeStage.setText(Integer.toString(listeOffres.get(0).getDuree()));
@@ -55,12 +65,6 @@ public class ConsulterOffreStageControl {
     	dateDebut.setValue(listeOffres.get(0).getDateD());
     }
     
-
-
-	@FXML
-    void AddAnnuler(ActionEvent event) {
-
-    }
     
     @FXML
     void AddPrec(ActionEvent event) {
@@ -106,7 +110,14 @@ public class ConsulterOffreStageControl {
     @FXML
     void AddPostuler(ActionEvent event) {
     	JOptionPane.showMessageDialog(null, "Votre candidature a bien été envoyée.");
-    	
+    	if(AuthentificationControl.getAuthentification().getType().equals("entreprise")){
+    		//mise a jour
+    	}
+    	else if(AuthentificationControl.getAuthentification().getType().equals("admin")){
+    		//supprimer
+    	}else if(AuthentificationControl.getAuthentification().getType().equals("etudiant")){
+    		//postuler
+    	}
 
     }
 }

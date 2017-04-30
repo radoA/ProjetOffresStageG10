@@ -450,13 +450,12 @@ public class Database {
 		return 0;
 	}
 
-	//public static void main(String[] args){
-//		ArrayList<Entreprise> auth=Database.extractAllEntrepriseFromDB();
+//	public static void main(String[] args){
+//		ArrayList<OffreStage> auth=Database.extractOffreDeStageFromDB(7);
 //		System.out.println("Taille liste authentification = " + auth.size());
 //		for (int i=0; i<auth.size(); i++) {
 //			System.out.println(auth.get(i).toString());
 //			System.out.println("----------------------------------------");
 //		}
-		//System.out.println(updateToDB(new Entreprise(),16));
-	//}
+//	}
 }
