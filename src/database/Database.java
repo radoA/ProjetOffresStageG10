@@ -147,6 +147,7 @@ public class Database {
 					o.setDescriptifOffre(rs.getString(4));
 					o.setDomaine(rs.getString(5));
 					date = rs.getString(6);//la date en String
+					//o.setDateD(date);
 					myDate = LocalDate.parse(date);
 					o.setDateD(myDate);
 					o.setDuree(rs.getInt(7));

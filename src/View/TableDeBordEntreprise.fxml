@@ -12,38 +12,34 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="687.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TableDeBordEntrepriseControl">
   <tabs>
-      <Tab text="Informations sur Entreprise">
+      <Tab fx:id="allOffresPostes" text="Informations sur Entreprise">
          <content>
             <AnchorPane maxHeight="600.0" maxWidth="938.0" minHeight="413.0" minWidth="600.0" prefHeight="481.0" prefWidth="687.0">
                <children>
-                  <TextField fx:id="nomEntrAjout1" layoutX="367.0" layoutY="91.0" prefHeight="26.0" prefWidth="280.0" promptText="Nom domaine" />
-                  <TextField fx:id="adrNumRueEntrAjout1" layoutX="367.0" layoutY="126.0" prefHeight="25.0" prefWidth="278.0" promptText="adr" />
-                  <TextField fx:id="cPostalEntrAj1" layoutX="367.0" layoutY="162.0" prefHeight="26.0" prefWidth="59.0" promptText="77000" />
-                  <TextField fx:id="villeEntrAj1" layoutX="443.0" layoutY="162.0" prefHeight="26.0" prefWidth="201.0" promptText="Paris" />
-                  <TextField fx:id="mailEntrAj1" layoutX="367.0" layoutY="203.0" prefHeight="26.0" prefWidth="277.0" promptText="mail:" />
-                  <TextField fx:id="telEntrAj1" layoutX="367.0" layoutY="244.0" prefHeight="26.0" prefWidth="198.0" promptText="tel:" />
-                  <Button fx:id="Supprimer1" layoutX="163.0" layoutY="502.0" mnemonicParsing="false" onAction="#AddSupprimer" prefHeight="36.0" prefWidth="112.0" text="Supprimer" />
+                  <TextField fx:id="nomEntrAjout1" layoutX="399.0" layoutY="90.0" prefHeight="26.0" prefWidth="280.0" promptText="Nom domaine" />
+                  <TextField fx:id="adrNumRueEntrAjout1" layoutX="400.0" layoutY="126.0" prefHeight="25.0" prefWidth="278.0" promptText="2 rue de Lamartine" />
+                  <TextField fx:id="cPostalEntrAj1" layoutX="400.0" layoutY="162.0" prefHeight="26.0" prefWidth="59.0" promptText="77000" />
+                  <TextField fx:id="villeEntrAj1" layoutX="472.0" layoutY="162.0" prefHeight="26.0" prefWidth="201.0" promptText="Paris" />
+                  <TextField fx:id="mailEntrAj1" layoutX="401.0" layoutY="204.0" prefHeight="26.0" prefWidth="277.0" promptText="mail@domaine.com" />
+                  <TextField fx:id="telEntrAj1" layoutX="401.0" layoutY="240.0" prefHeight="26.0" prefWidth="198.0" promptText="0658746284" />
+                  <Button fx:id="Supprimer1" layoutX="250.0" layoutY="502.0" mnemonicParsing="false" onAction="#AddSupprimer" prefHeight="36.0" prefWidth="112.0" text="Supprimer" />
                   <Button fx:id="Actualiser1" layoutX="27.0" layoutY="501.0" mnemonicParsing="false" onAction="#AddActualiser" prefHeight="37.0" prefWidth="107.0" text="Modifier" />
-                  <TableView layoutX="27.0" layoutY="26.0" prefHeight="444.0" prefWidth="248.0">
-                     <columns>
-                        <TableColumn prefWidth="247.0" text="Offres Postées" />
-                     </columns>
-                  </TableView>
-                  <Label layoutX="370.0" layoutY="10.0" prefHeight="37.0" prefWidth="247.0" text="Information de l'entreprise">
+                  <TableView fx:id="offresAll" layoutX="27.0" layoutY="10.0" prefHeight="485.0" prefWidth="364.0" />
+                  <Label layoutX="395.0" layoutY="10.0" prefHeight="37.0" prefWidth="247.0" text="Entreprise">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nomEtreprise" layoutX="366.0" layoutY="57.0" prefHeight="26.0" prefWidth="215.0" promptText="Nom Entreprise" />
-                  <Label layoutX="370.0" layoutY="288.0" prefHeight="37.0" prefWidth="247.0" text="Information sur l'offre">
+                  <TextField fx:id="nomEtreprise" layoutX="397.0" layoutY="54.0" prefHeight="26.0" prefWidth="280.0" promptText="Nom Entreprise" />
+                  <Label layoutX="395.0" layoutY="282.0" prefHeight="37.0" prefWidth="247.0" text="Information de l'offre">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nomEntrAjout11" layoutX="368.0" layoutY="363.0" prefHeight="26.0" prefWidth="280.0" promptText="Domaine de l'offre" />
-                  <TextField fx:id="adrNumRueEntrAjout11" layoutX="368.0" layoutY="398.0" prefHeight="25.0" prefWidth="278.0" promptText="Lieu:" />
-                  <TextField fx:id="secteurEntrAj11" layoutX="369.0" layoutY="433.0" prefHeight="26.0" prefWidth="144.0" promptText="secteur" />
-                  <TextField fx:id="offrePost11" layoutX="367.0" layoutY="329.0" prefHeight="26.0" prefWidth="215.0" promptText="Nom Offre" />
+                  <TextField fx:id="nomEntrAjout11" layoutX="397.0" layoutY="363.0" prefHeight="26.0" prefWidth="280.0" promptText="Domaine de l'offre" />
+                  <TextField fx:id="adrNumRueEntrAjout11" layoutX="398.0" layoutY="399.0" prefHeight="25.0" prefWidth="278.0" promptText="Lieu:" />
+                  <TextField fx:id="secteurEntrAj11" layoutX="399.0" layoutY="433.0" prefHeight="26.0" prefWidth="276.0" promptText="secteur" />
+                  <TextField fx:id="offrePost11" layoutX="395.0" layoutY="327.0" prefHeight="26.0" prefWidth="283.0" promptText="Nom Offre" />
                </children>
             </AnchorPane>
          </content>
@@ -52,22 +48,17 @@
          <content>
             <AnchorPane maxHeight="600.0" maxWidth="938.0" minHeight="578.0" minWidth="600.0" prefHeight="578.0" prefWidth="716.0">
                <children>
-                  <TextField fx:id="premon" layoutX="344.0" layoutY="132.0" prefHeight="26.0" prefWidth="179.0" promptText="Prenom" />
-                  <TextField fx:id="adresseE" layoutX="341.0" layoutY="165.0" prefHeight="26.0" prefWidth="299.0" promptText="adr" />
-                  <TextField fx:id="code" layoutX="343.0" layoutY="201.0" prefHeight="26.0" prefWidth="59.0" promptText="code" />
-                  <TextField fx:id="ville" layoutX="414.0" layoutY="201.0" prefHeight="26.0" prefWidth="225.0" promptText="ville" />
-                  <TextField fx:id="mail" layoutX="341.0" layoutY="240.0" prefHeight="26.0" prefWidth="300.0" promptText="mail" />
-                  <TextField fx:id="tel" layoutX="525.0" layoutY="132.0" prefHeight="26.0" prefWidth="115.0" promptText="tel:" />
-                  <TextField fx:id="sexe" layoutX="344.0" layoutY="59.0" prefHeight="26.0" prefWidth="140.0" promptText="M/Mme" />
-                  <Button fx:id="Accepter" layoutX="521.0" layoutY="506.0" mnemonicParsing="false" onAction="#AddAccepter" prefHeight="37.0" prefWidth="120.0" text="Accepté" />
+                  <TextField fx:id="premon" layoutX="341.0" layoutY="90.0" prefHeight="26.0" prefWidth="179.0" promptText="Prenom" />
+                  <TextField fx:id="adresseE" layoutX="340.0" layoutY="128.0" prefHeight="26.0" prefWidth="329.0" promptText="2 impasse du canal" />
+                  <TextField fx:id="code" layoutX="341.0" layoutY="169.0" prefHeight="26.0" prefWidth="59.0" promptText="13800" />
+                  <TextField fx:id="ville" layoutX="415.0" layoutY="169.0" prefHeight="26.0" prefWidth="252.0" promptText="Istres" />
+                  <TextField fx:id="mail" layoutX="340.0" layoutY="213.0" prefHeight="26.0" prefWidth="326.0" promptText="mail@domaine.com" />
+                  <TextField fx:id="tel" layoutX="572.0" layoutY="90.0" prefHeight="26.0" prefWidth="97.0" promptText="0658746384" />
+                  <Button fx:id="Accepter" layoutX="521.0" layoutY="506.0" mnemonicParsing="false" onAction="#AddAccepter" prefHeight="37.0" prefWidth="120.0" text="Accepter" />
                   <Button fx:id="Supprimer" layoutX="164.0" layoutY="506.0" mnemonicParsing="false" onAction="#AddSupprimer" prefHeight="36.0" prefWidth="112.0" text="Supprimer" />
                   <Button fx:id="Actualiser" layoutX="26.0" layoutY="505.0" mnemonicParsing="false" onAction="#AddActualiser" prefHeight="37.0" prefWidth="107.0" text="Actualiser" />
-                  <TableView layoutX="27.0" layoutY="26.0" prefHeight="468.0" prefWidth="248.0">
-                    <columns>
-                      <TableColumn prefWidth="247.0" text="Etudiants Postulés" />
-                    </columns>
-                  </TableView>
-                  <TableView layoutX="338.0" layoutY="282.0" prefHeight="211.0" prefWidth="303.0">
+                  <TableView fx:id="etudiantsCandidats" layoutX="27.0" layoutY="26.0" prefHeight="468.0" prefWidth="300.0" />
+                  <TableView layoutX="338.0" layoutY="249.0" prefHeight="244.0" prefWidth="337.0">
                     <columns>
                       <TableColumn prefWidth="302.0" text="Etudiants Acceptés" />
                     </columns>
@@ -77,8 +68,8 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nom" layoutX="344.0" layoutY="97.0" prefHeight="26.0" prefWidth="281.0" promptText="Nom" />
-                  <Button fx:id="Accepter2" layoutX="341.0" layoutY="506.0" mnemonicParsing="false" onAction="#AddAccepter" prefHeight="37.0" prefWidth="120.0" text="Réfusé" />
+                  <TextField fx:id="nom" layoutX="341.0" layoutY="47.0" prefHeight="26.0" prefWidth="327.0" promptText="Nom" />
+                  <Button fx:id="Accepter2" layoutX="341.0" layoutY="506.0" mnemonicParsing="false" onAction="#AddAccepter" prefHeight="37.0" prefWidth="120.0" text="Refuser" />
                </children>
             </AnchorPane>
          </content></Tab>
